@@ -45,4 +45,15 @@ describe('NgxIsEqualsTo directive', function() {
     expect($rootScope.myForm.passwordConfirm.$invalid).toBe(false);
 
   });
+
+  it('says invalid, when only first field is entered', function() {
+    var compiled = $compile(html)($rootScope);
+    
+    // Set the view value
+    $rootScope.myForm.password.$viewValue = 'hoge';
+    $rootScope.myForm.$commitViewValue();
+
+    expect($rootScope.myForm.passwordConfirm.$invalid).toBe(true);
+  });
+
 });

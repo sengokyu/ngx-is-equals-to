@@ -19,11 +19,11 @@
             var linkFn = function (scope, element, attrs, ctrl) {
 
                 ctrl.$validators.ngxIsEqualsTo = function (modelValue, viewValue) {
-                    if (ctrl.$isEmpty(modelValue)) {
+                    var another = $parse(attrs.ngxIsEqualsTo)(scope);
+
+                    if (ctrl.$isEmpty(another.$modelValue) && ctrl.$isEmpty(modelValue)) {
                         return true;
                     }
-
-                    var another = $parse(attrs.ngxIsEqualsTo)(scope);
 
                     return viewValue == another.$viewValue;
                 };

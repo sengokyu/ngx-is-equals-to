@@ -1,10 +1,10 @@
 {
   "name": "ngx-is-equals-to",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An AngularJS 1.x directive. This validates multiple input fields has same value. Typical usage is a password input field.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/karma start --single-run"
   },
   "repository": {
     "type": "git",
